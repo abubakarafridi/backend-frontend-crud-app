@@ -38,6 +38,12 @@ function App() {
     })
     .catch(err => console.error(err))
   }
+  
+  const deleteUserById = (id) => {
+    axios.delete(`${API_URL}/${id}`)
+    .then (() => {setUsers(users.filter(user => user.id !== id))})
+    .catch(err => console.err(err))
+  }
 
   return (
     <>
@@ -58,7 +64,7 @@ function App() {
         <li key={user.id}>
           {user.name}
           <button onClick={() => setUpdateUser({id: user.id, name: user.name})}>Edit</button>
-          <button>Delete</button>
+          <button onClick={() => deleteUserById(user.id)}>Delete</button>
         </li>
       ))
       }
