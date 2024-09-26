@@ -11,3 +11,111 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.container {
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+
+.main {
+  background-color: rgb(48, 43, 43);
+  color: white;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.add {
+  display: flex;
+  gap: 4px;
+}
+
+.add input {
+  width: 75%;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+  border: none;
+}
+
+.add input:focus {
+  outline: 3px solid #1c62b9;
+}
+
+.add-btn {
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: green;
+  color: white;
+}
+
+.update {
+  display: flex;
+  gap: 4px;
+  margin-top: 5px;
+}
+
+.update input {
+  width: 75%;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+  border: none;
+}
+
+.update input:focus {
+  outline: 3px solid #1c62b9;
+}
+
+.update-btn {
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: green;
+  color: white;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  margin-top: 10px;
+  background-color: white;
+  color: black;
+  max-width: 400px;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+ul li .edit-btn {
+  margin-left: 12px;
+  margin-right: 6px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: green;
+  color: white;
+}
+
+ul li .delete-btn {
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: red;
+  color: white;
+}
