@@ -12,7 +12,7 @@ function App() {
     const response = await axios.get(API_URL);
     const content = response.data;
 
-    setUsers(content.users);
+    setUsers(content.data);
   }
 
   useEffect(()=> {
