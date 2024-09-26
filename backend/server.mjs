@@ -20,12 +20,13 @@ function errorHandler(err, req, res, next) {
 }
 
 app.get('/api/users', (req, res) => {
-  res.status(200).json({ message: 'Get Request - get all user', users });
+  res.status(200).json({ message: 'Get Request - get all user', data:users });
 });
 
 app.post('/api/users', (req, res) => {
+  const body = req.body;
   const userId = users.length + 1;
-  const newUser = { userId, ...req.body };
+  const newUser = { id: userId, ...body};
   users.push(newUser);
   res
     .status(201)
@@ -34,7 +35,7 @@ app.post('/api/users', (req, res) => {
 
 app.put('/api/users/:id', (req, res) => {
   const userId = parseInt(req.params.id);
-  const userIndex = users.filter((user) => user.id === userId);
+  const userIndex = users.findIndex((user) => user.id === userId);
   if (userIndex !== -1) {
     const updatedUser = { ...users[userIndex], ...req.body };
     users[userIndex] = updatedUser;
