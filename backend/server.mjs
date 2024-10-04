@@ -25,8 +25,7 @@ app.get('/api/users', (req, res) => {
 
 app.post('/api/users', (req, res) => {
   const body = req.body;
-  const userId = users.length + 1;
-  const newUser = { id: userId, ...body};
+  const newUser = { id: users.length + 1, ...body};
   users.push(newUser);
   res
     .status(201)
@@ -52,7 +51,7 @@ app.put('/api/users/:id', (req, res) => {
 
 app.delete('/api/users/:id', (req, res) => {
   const userId = parseInt(req.params.id);
-  const userIndex = users.filter((user) => user.id === userId);
+  const userIndex = users.findIndex((user) => user.id === userId);
   if (userIndex !== -1) {
     users.splice(userIndex, 1);
     res.status(200).json({
